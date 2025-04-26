@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:13
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    ports:
+      - '5434:5432' # Correct mapping: Host port 5434 -> Container port 5432
